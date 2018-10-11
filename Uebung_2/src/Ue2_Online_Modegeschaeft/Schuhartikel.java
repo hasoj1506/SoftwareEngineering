@@ -4,7 +4,7 @@ package Ue2_Online_Modegeschaeft;
 * Unterklasse der Klasse Artikel. Speichert zusätzlich
 * das verwendete Material ab und die Schuhart ab.
 */
-public class Schuhartikel extends Artikel{
+public class Schuhartikel extends Artikel implements IArtikel {
 
 	private String material;
 	private String schuhart;

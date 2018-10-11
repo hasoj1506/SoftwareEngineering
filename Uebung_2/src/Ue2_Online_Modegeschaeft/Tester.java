@@ -13,7 +13,7 @@ public class Tester {
 		Kleidungsartikel AdidasJacke = new Kleidungsartikel(3, "Adidas Jacke", 59.99, "Polyester");
 		Kleidungsartikel TommyHilfigerShirt = new Kleidungsartikel(4, "Tommy Hilfiger T-Shirt", 24.99, "Baumwolle");
 	
-		Kunde Mueller = new Kunde("1;Mueller;Tom");
+		IKunde Mueller = new GoldKunde("1;Mueller;Tom");
 		
 		
 		//Erstellen des 1. Warenkorbes mit anschlieﬂendem Bestellvorgang

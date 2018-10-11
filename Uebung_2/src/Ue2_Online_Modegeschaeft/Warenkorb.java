@@ -9,9 +9,9 @@ import java.util.ArrayList;
 public class Warenkorb {
 
 	private ArrayList<Artikel> artikelliste = new ArrayList<Artikel>();
-	private Kunde kunde;
+	private IKunde kunde;
 	
-	public Warenkorb(Kunde k){
+	public Warenkorb(IKunde k){
 		kunde = k;
 	}
 	
@@ -25,7 +25,7 @@ public class Warenkorb {
 	*
 	* @param a Artikel, der aus dem Warenkorb gelöscht werden soll
 	**/
-	public void loescheArtikelAusWarenkorb(Artikel a){
+	public void loescheArtikelAusWarenkorb(IArtikel a){
 		boolean geloescht = false;
 		
 		for(int i = 0; i < artikelliste.size(); i++){
