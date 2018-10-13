@@ -5,6 +5,7 @@ public class WetterDaten {
 	private AktuelleAnzeige aktuelleAnzeige = new AktuelleAnzeige();
 	private StatistikAnzeige statistikAnzeige = new StatistikAnzeige();
 	private VorhersageAnzeige vorhersageAnzeige = new VorhersageAnzeige();
+	private FahrenheitAnzeige fahrenheitAnzeige = new FahrenheitAnzeige();
 	
 	private double temperatur;
 	private double feuchtigkeit;
@@ -23,6 +24,7 @@ public class WetterDaten {
 		aktuelleAnzeige.aktualisieren(temp, feuchtigkeit, druck);
 		statistikAnzeige.aktualisieren(temp, feuchtigkeit, druck);
 		vorhersageAnzeige.aktualisieren(temp, feuchtigkeit, druck);
+		fahrenheitAnzeige.aktualisieren(temp, feuchtigkeit, druck);
 	}
 	
 	private double getTemperatur()

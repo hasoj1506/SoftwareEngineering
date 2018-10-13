@@ -20,6 +20,12 @@ public class AnzeigenFactory {
 		return anzeige;
 	}
 	
+	public Anzeige createFahrenheitAnzeige(WetterDaten wetterDaten)
+	{
+		Anzeige anzeige = (Anzeige) new FahrenheitAnzeige(wetterDaten);
+		return anzeige;
+	}
+	
 	
 
 }
