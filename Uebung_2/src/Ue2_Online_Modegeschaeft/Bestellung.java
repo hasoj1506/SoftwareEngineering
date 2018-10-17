@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Bestellung {
 	
 	private int bestellNr;
-	private ArrayList<Artikel> artikelpositionen = new ArrayList<Artikel>();
+	private ArrayList<IArtikel> artikelpositionen = new ArrayList<IArtikel>();
 	private IKunde kunde;
 	
 	public Bestellung(int n, IKunde k){
@@ -17,7 +17,7 @@ public class Bestellung {
 		this.kunde = k;
 	}
 	
-	public void hinzufuegenArtikel(Artikel a){
+	public void hinzufuegenArtikel(IArtikel a){
 		artikelpositionen.add(a);
 	}
 	
@@ -36,7 +36,7 @@ public class Bestellung {
 		return betrag * ((100 - rabatt) / 100);
 	}
 	
-	public ArrayList<Artikel> getArtikelpositionen(){
+	public ArrayList<IArtikel> getArtikelpositionen(){
 		return artikelpositionen;
 	}
 	
