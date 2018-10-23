@@ -1,6 +1,6 @@
 package Ue2_GenerierterCode;
 
-import java.awt.List;
+import java.util.ArrayList;
 
 /**
  * @author 
@@ -14,8 +14,8 @@ public class Artikel {
 	private String marke;
 	private double preis;
 	private String status;
-	public List<Lieferant> m_Lieferant;
-	public List<Groesse> m_Groesse;
+	public ArrayList<Lieferant> m_Lieferant;
+	public ArrayList<Groesse> m_Groesse;
 
 	public Artikel(){
 

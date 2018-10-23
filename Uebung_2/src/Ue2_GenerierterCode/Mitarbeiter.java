@@ -1,7 +1,7 @@
 package Ue2_GenerierterCode;
 
-import java.awt.List;
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  * @author 
@@ -16,7 +16,7 @@ public class Mitarbeiter {
 	private String nachname;
 	private String passwort;
 	private String vorname;
-	public List<Artikel> m_Artikel;
+	public ArrayList<Artikel> m_Artikel;
 
 	public Mitarbeiter(){
 
