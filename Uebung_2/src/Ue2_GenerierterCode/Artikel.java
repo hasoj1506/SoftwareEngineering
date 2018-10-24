@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 18-Okt-2018 12:51:31
  */
+//test
 public class Artikel {
 
 	private int artikelnummer;
