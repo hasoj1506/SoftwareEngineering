@@ -9,6 +9,8 @@ import java.util.Vector;
  */
 
 public class TestAdapter {
+	public CSVLeser m_CSVLeser;
+
 
 	public static void main (String[] args)
 	{
