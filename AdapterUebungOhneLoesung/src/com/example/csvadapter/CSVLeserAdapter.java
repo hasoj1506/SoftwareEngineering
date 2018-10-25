@@ -12,9 +12,11 @@ public class CSVLeserAdapter implements IPersonenLeser {
 	}
 	
 	@Override
-	public Vector<Person> lesePersonen() {
+	public Vector<Person[]> lesePersonen() {
 		
-		return new Vector<Person>();
+		Vector<String[]> strings = m_CSVLeser.lesePersonenDatei(file);
+		Vector<Person[]> personen;
+		return personen;
 		
 	}
 

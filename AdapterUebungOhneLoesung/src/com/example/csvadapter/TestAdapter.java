@@ -14,10 +14,10 @@ public class TestAdapter {
 
 	public static void main (String[] args)
 	{
-		IPersonenLeser leser = new CSVLeserAdapter("personen.csv");
-		Vector<Person> personen = leser.lesePersonen();
+		IPersonenLeser leser = new CSVLeserAdapter("person.csv");
+		Vector<String[]> personen = leser.lesePersonen();
 		
-		for (Person person : personen)
+		for (String[] person : personen)
 		{
 			person.print();
 		}
