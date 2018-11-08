@@ -18,9 +18,5 @@ public class Person {
 	{
 		System.out.println(vorname + " " + nachname);
 	}
-
-	public Vector<Person> lesePersonen(){
-		return null;
-	}
 	
 }

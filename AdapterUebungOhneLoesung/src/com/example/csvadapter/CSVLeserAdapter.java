@@ -4,7 +4,6 @@ import java.util.Vector;
 
 public class CSVLeserAdapter implements IPersonenLeser {
 	private String file;
-	public CSVLeser m_CSVLeser;
 	
 	public CSVLeserAdapter(String file)
 	{
@@ -12,11 +11,14 @@ public class CSVLeserAdapter implements IPersonenLeser {
 	}
 	
 	@Override
-	public Vector<Person[]> lesePersonen() {
+	public Vector<Person> lesePersonen() {
 		
-		Vector<String[]> strings = m_CSVLeser.lesePersonenDatei(file);
-		Vector<Person[]> personen;
-		return personen;
+		CSVLeser leser = new CSVLeser();
+		Vector<String[]> gelesenePersonen = leser.lesePersonenDatei(file);
+		Vector<Person> personenVector = new Vector<Person>();
+		for (String[] person : gelesenePersonen)
+			personenVector.add(new Person (person [0], person[1]));
+		return personenVector;
 		
 	}
 

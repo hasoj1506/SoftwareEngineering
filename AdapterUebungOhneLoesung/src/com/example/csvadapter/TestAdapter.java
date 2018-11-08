@@ -9,15 +9,13 @@ import java.util.Vector;
  */
 
 public class TestAdapter {
-	public CSVLeser m_CSVLeser;
-
 
 	public static void main (String[] args)
 	{
-		IPersonenLeser leser = new CSVLeserAdapter("person.csv");
-		Vector<String[]> personen = leser.lesePersonen();
+		IPersonenLeser leser = new CSVLeserAdapter("Personen.csv");
+		Vector<Person> personen = leser.lesePersonen();
 		
-		for (String[] person : personen)
+		for (Person person : personen)
 		{
 			person.print();
 		}
