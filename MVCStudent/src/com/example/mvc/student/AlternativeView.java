@@ -61,6 +61,7 @@ public class AlternativeView implements IView{
 		viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		viewFrame.getContentPane().add(viewPanel,BorderLayout.CENTER);
 		viewFrame.pack();
+		viewFrame.setBounds(700, 200, 500, 200);
 		viewFrame.setVisible(true);
 		
 	}

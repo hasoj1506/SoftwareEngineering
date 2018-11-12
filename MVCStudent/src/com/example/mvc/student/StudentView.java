@@ -45,6 +45,7 @@ public class StudentView implements IView, ActionListener{
 		viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		viewFrame.getContentPane().add(viewPanel,BorderLayout.CENTER);
 		viewFrame.pack();
+		viewFrame.setBounds(100, 200, 500, 200);
 		viewFrame.setVisible(true);
 		
 	}
@@ -60,6 +61,7 @@ public class StudentView implements IView, ActionListener{
 		controlFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		controlFrame.getContentPane().add(controlPanel,BorderLayout.CENTER);
 		controlFrame.pack();
+		controlFrame.setBounds(400, 500, 500, 200);
 		controlFrame.setVisible(true);
 	}
 	
