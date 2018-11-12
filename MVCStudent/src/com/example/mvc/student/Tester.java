@@ -10,6 +10,7 @@ public class Tester {
 		StudentController studentController = new StudentController(studentModel);
 		
 		StudentView studentView = new StudentView(studentController, studentModel);
+		AlternativeView alternativeView = new AlternativeView(studentController, studentModel);
 		
 		
 	}

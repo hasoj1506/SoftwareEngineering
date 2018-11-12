@@ -71,7 +71,7 @@ public class StudentView implements IView, ActionListener{
 	public void aktualisieren(IModel model)
 	{
 		
-		// hier vervollständigen
+		semesterLabel.setText(model.getSemester());
 		
 	}
 

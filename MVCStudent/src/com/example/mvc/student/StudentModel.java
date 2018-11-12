@@ -1,12 +1,14 @@
 package com.example.mvc.student;
 
+import java.util.ArrayList;
 
 public class StudentModel implements IModel {
 	private String name;
 	private String number;
 	private int semester=0;
+	private ArrayList<IView> views = new ArrayList<IView>();
 
-	private IView view;
+	//private IView view;
 	
 	public StudentModel(String sname, String snumber, int ssemester)
 	{
@@ -23,19 +25,21 @@ public class StudentModel implements IModel {
 	}
 	
 	public void anmelden(IView view) {
-		this.view = view;
+		views.add(view);
 	}
 	
 	@Override
 	public void abmelden(IView view) {
-		this.view = null;
+		if(views.contains(view))
+			views.remove(view);
 		
 	}
 
 	
 	private void benachrichtigen() {
 		
-		// hier vervollständigen
+		for(int i = 0; i < views.size(); ++i)
+			views.get(i).aktualisieren(this);
 		
 	}
 
@@ -58,9 +62,8 @@ public class StudentModel implements IModel {
 	
 	public String getSemester()
 	{
-		return new String("");
+		return String.valueOf(semester);
 		
-		// hier vervollständigen
 	}
 
 	
