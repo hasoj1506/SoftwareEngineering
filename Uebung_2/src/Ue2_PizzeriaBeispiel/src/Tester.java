@@ -7,8 +7,15 @@ public class Tester {
 	 */
 	public static void main(String[] args) {
 		
-		Pizzeria meinePizzeria = new Pizzeria();
-		Pizza neuePizza =  meinePizzeria.erstellePizza("Berlin", "Salami");
+		Pizzeria muenchenPizzeria;
+		Pizzeria berlinPizzeria;
+		
+		muenchenPizzeria = new MuenchenPizzeria();
+		berlinPizzeria = new BerlinPizzeria();
+		
+		berlinPizzeria.erstellePizza("Salami");
+		System.out.println();
+		muenchenPizzeria.erstellePizza("Schinken");
 		
 	}
 

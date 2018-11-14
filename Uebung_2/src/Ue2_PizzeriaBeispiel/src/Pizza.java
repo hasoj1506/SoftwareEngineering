@@ -1,25 +1,13 @@
 package Ue2_PizzeriaBeispiel.src;
 
-public class Pizza {
+public abstract class Pizza {
 
-	public void vorbereiten() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void vorbereiten();
 	
-	public void backen() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void backen();
 	
-	public void schneiden() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void schneiden();
 	
-	public void verpacken() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void verpacken();
 
 }
