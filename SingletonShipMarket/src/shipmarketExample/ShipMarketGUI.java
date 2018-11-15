@@ -16,7 +16,6 @@ import javax.swing.JButton;
 public class ShipMarketGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -47,25 +46,6 @@ public class ShipMarketGUI extends JFrame {
 		
 		JLabel lblThisIsA = new JLabel("This is a ShipMarket");
 		contentPane.add(lblThisIsA, BorderLayout.NORTH);
-		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-			},
-			new String[] {
-				"Ship", "ShipOwner", "To sell", "Interested"
-			}
-		));
-		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		contentPane.add(table, BorderLayout.CENTER);
 		
 		JButton btnFillTable = new JButton("Fill Table");
 		contentPane.add(btnFillTable, BorderLayout.SOUTH);
