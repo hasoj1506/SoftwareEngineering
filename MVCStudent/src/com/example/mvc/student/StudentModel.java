@@ -5,42 +5,39 @@ import java.util.ArrayList;
 public class StudentModel implements IModel {
 	private String name;
 	private String number;
-	private int semester=0;
+	private int semester = 0;
 	private ArrayList<IView> views = new ArrayList<IView>();
 
-	//private IView view;
-	
-	public StudentModel(String sname, String snumber, int ssemester)
-	{
+	// private IView view;
+
+	public StudentModel(String sname, String snumber, int ssemester) {
 		name = sname;
 		number = snumber;
 		semester = ssemester;
 	}
-	
-	public void increaseSemester()
-	{
+
+	public void increaseSemester() {
 		semester++;
 		benachrichtigen();
-		
+
 	}
-	
+
 	public void anmelden(IView view) {
 		views.add(view);
 	}
-	
+
 	@Override
 	public void abmelden(IView view) {
-		if(views.contains(view))
+		if (views.contains(view))
 			views.remove(view);
-		
+
 	}
 
-	
 	private void benachrichtigen() {
-		
-		for(int i = 0; i < views.size(); ++i)
+
+		for (int i = 0; i < views.size(); ++i)
 			views.get(i).aktualisieren(this);
-		
+
 	}
 
 	public String getName() {
@@ -59,12 +56,9 @@ public class StudentModel implements IModel {
 		this.number = number;
 	}
 
-	
-	public String getSemester()
-	{
+	public String getSemester() {
 		return String.valueOf(semester);
-		
+
 	}
 
-	
 }

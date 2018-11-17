@@ -7,11 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
-public class AlternativeView implements IView{
+public class AlternativeView implements IView {
 	private StudentController controller;
 	private StudentModel model;
-	
+
 	JFrame viewFrame;
 	JPanel viewPanel;
 	JPanel studentPanel;
@@ -24,25 +23,22 @@ public class AlternativeView implements IView{
 	JLabel semesterTitelLabel;
 	JLabel numberTitelLabel;
 
-	
-	public AlternativeView(StudentController scontroller, StudentModel smodel)
-	{
+	public AlternativeView(StudentController scontroller, StudentModel smodel) {
 		controller = scontroller;
 		model = smodel;
 		model.anmelden(this);
 		createElements();
 	}
-	
-	public void createElements()
-	{
+
+	public void createElements() {
 		viewPanel = new JPanel(new BorderLayout());
-		
+
 		studentPanel = new JPanel(new FlowLayout());
 		studentTitelLabel = new JLabel("Name: ");
 		studentLabel = new JLabel(model.getName());
 		studentPanel.add(studentTitelLabel);
 		studentPanel.add(studentLabel);
-		
+
 		semesterPanel = new JPanel(new FlowLayout());
 		semesterTitelLabel = new JLabel("Anzahl Semester: ");
 		semesterLabel = new JLabel(model.getSemester());
@@ -52,31 +48,29 @@ public class AlternativeView implements IView{
 		semesterPanel.add(semesterLabel);
 		semesterPanel.add(numberTitelLabel);
 		semesterPanel.add(numberLabel);
-		
+
 		titelLabel = new JLabel("Das ist eine alternative View!");
 		viewPanel.add(studentPanel, BorderLayout.WEST);
 		viewPanel.add(semesterPanel, BorderLayout.SOUTH);
 		viewPanel.add(titelLabel, BorderLayout.NORTH);
 		viewFrame = new JFrame("Alternative View");
 		viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		viewFrame.getContentPane().add(viewPanel,BorderLayout.CENTER);
+		viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
 		viewFrame.pack();
 		viewFrame.setBounds(700, 200, 500, 200);
 		viewFrame.setVisible(true);
-		
+
 	}
-	
-	
+
 	/**
-	 * Diese Methode wird vom Model aufgerufen,
-	 * wenn sich das Model verändert hat.
+	 * Diese Methode wird vom Model aufgerufen, wenn sich das Model verändert
+	 * hat.
 	 * 
 	 */
-	public void aktualisieren(IModel model)
-	{
-		
+	public void aktualisieren(IModel model) {
+
 		semesterLabel.setText(model.getSemester());
-		
+
 	}
 
 }
