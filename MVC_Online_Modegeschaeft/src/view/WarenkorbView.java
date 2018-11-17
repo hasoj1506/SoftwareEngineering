@@ -20,6 +20,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import controller.WarenkorbController;
+import model.ArtikelModelInterface;
+import model.ArtikellisteModel;
 import model.Observer;
 import model.WarenkorbModel;
 

@@ -46,6 +46,7 @@ public class ArtikellisteView implements Observer{
 		        if (evt.getClickCount() == 2) {
 		            int index = list.locationToIndex(evt.getPoint());
 		    		ArtikelLableView a_view = new ArtikelLableView(al_model.getArtikelliste().get(index), al_model.getKunde());
+		    		ArtikelTextFieldView atf_view = new ArtikelTextFieldView(al_model.getArtikelliste().get(index), al_model.getKunde());
 		        } 
 		    }
 		});

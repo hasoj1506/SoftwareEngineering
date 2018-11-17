@@ -37,6 +37,7 @@ public class Tester {
 		Mueller.getWarenkorb().hinzufuegenArtikelZuArtikelliste(TommyHilfigerShirt);
 		WarenkorbView wkview = new WarenkorbView(Mueller.getWarenkorb());
 		
+		
 	}
 	
 }
