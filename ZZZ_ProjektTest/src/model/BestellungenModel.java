@@ -26,11 +26,11 @@ public class BestellungenModel {
 	* 
 	* @return Bestellungsnummer der Bestellung
 	**/
-	public int neueBestellung(ArrayList<ArtikelModelInterface> arrayList, KundeModel k_model) {
+	public int neueBestellung(ArrayList<PruefungsModelInterface> arrayList, KundeModel k_model) {
 		id++;
 		BestellungModel neuB = new BestellungModel(id, k_model);
 		
-		for(ArtikelModelInterface a_model: arrayList){
+		for(PruefungsModelInterface a_model: arrayList){
 			neuB.hinzufuegenArtikel(a_model);
 		}
 		

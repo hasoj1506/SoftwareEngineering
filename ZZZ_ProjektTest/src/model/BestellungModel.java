@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 public class BestellungModel {
 	
 	private int bestellNr;
-	private ArrayList<ArtikelModelInterface> artikelpositionen = new ArrayList<ArtikelModelInterface>();
+	private ArrayList<PruefungsModelInterface> artikelpositionen = new ArrayList<PruefungsModelInterface>();
 	private KundeModel kunde;
 	
 	public BestellungModel(int n, KundeModel k){
@@ -20,7 +20,7 @@ public class BestellungModel {
 		this.kunde = k;
 	}
 	
-	public void hinzufuegenArtikel(ArtikelModelInterface a_model){
+	public void hinzufuegenArtikel(PruefungsModelInterface a_model){
 		artikelpositionen.add(a_model);
 	}
 	
@@ -32,13 +32,13 @@ public class BestellungModel {
 		double betrag = 0;
 		
 		for(int i = 0; i < artikelpositionen.size(); i++){
-			betrag = betrag + artikelpositionen.get(i).getPreis();
+			betrag = betrag + artikelpositionen.get(i).getPruefungsdauer();
 		}
 		
 		return betrag;
 	}
 	
-	public ArrayList<ArtikelModelInterface> getArtikelpositionen(){
+	public ArrayList<PruefungsModelInterface> getArtikelpositionen(){
 		return artikelpositionen;
 	}
 	
