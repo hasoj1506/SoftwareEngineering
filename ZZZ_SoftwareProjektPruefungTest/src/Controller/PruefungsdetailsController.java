@@ -1,14 +1,14 @@
 package Controller;
 
 import Views.PruefungsDetailsView;
-import Models.PruefungsModelInterface;
+import Models.PruefungsInterface;
 
 public class PruefungsdetailsController implements PruefungsControllerInterface{
 
-	private PruefungsModelInterface a_model;
+	private PruefungsInterface a_model;
 	private PruefungsDetailsView a_view;
 	
-	public PruefungsdetailsController (PruefungsModelInterface model, PruefungsDetailsView view){
+	public PruefungsdetailsController (PruefungsInterface model, PruefungsDetailsView view){
 		this.a_model = model;
 		this.a_view = view;
 	}
@@ -18,6 +18,10 @@ public class PruefungsdetailsController implements PruefungsControllerInterface{
 	}
 	
 	public void loeschePruefung(){
+		
+	}
+	
+	public void speicherPruefung(){
 		
 	}
 	

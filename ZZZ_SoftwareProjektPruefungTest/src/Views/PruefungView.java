@@ -64,35 +64,35 @@ public class PruefungView {
 		infoPanel.setBackground(Color.LIGHT_GRAY);
 		frame.getContentPane().add(infoPanel, BorderLayout.NORTH);
 		GridBagLayout gbl_infoPanel = new GridBagLayout();
-		gbl_infoPanel.rowHeights = new int[] {20};
-		gbl_infoPanel.columnWeights = new double[]{1.0, 1.0, 1.0, 1.0};
-		gbl_infoPanel.rowWeights = new double[]{0.0};
+		gbl_infoPanel.rowHeights = new int[] { 20 };
+		gbl_infoPanel.columnWeights = new double[] { 1.0, 1.0, 1.0, 1.0 };
+		gbl_infoPanel.rowWeights = new double[] { 0.0 };
 		infoPanel.setLayout(gbl_infoPanel);
-						
-						JLabel lblPrfungstitel = new JLabel("Pr\u00FCfungstitel");
-						GridBagConstraints gbc_lblPrfungstitel = new GridBagConstraints();
-						gbc_lblPrfungstitel.anchor = GridBagConstraints.WEST;
-						gbc_lblPrfungstitel.insets = new Insets(0, 0, 0, 50);
-						gbc_lblPrfungstitel.gridx = 0;
-						gbc_lblPrfungstitel.gridy = 0;
-						infoPanel.add(lblPrfungstitel, gbc_lblPrfungstitel);
-				
-						JLabel lblMatrikelnummer = new JLabel("Matrikelnummer: 1587953");
-						GridBagConstraints gbc_lblMatrikelnummer = new GridBagConstraints();
-						gbc_lblMatrikelnummer.anchor = GridBagConstraints.WEST;
-						gbc_lblMatrikelnummer.insets = new Insets(0, 0, 0, 50);
-						gbc_lblMatrikelnummer.gridx = 1;
-						gbc_lblMatrikelnummer.gridy = 0;
-						infoPanel.add(lblMatrikelnummer, gbc_lblMatrikelnummer);
-		
-				JLabel lblVersion = new JLabel("Version 1.01");
-				GridBagConstraints gbc_lblVersion = new GridBagConstraints();
-				gbc_lblVersion.anchor = GridBagConstraints.WEST;
-				gbc_lblVersion.insets = new Insets(0, 0, 0, 50);
-				gbc_lblVersion.gridx = 2;
-				gbc_lblVersion.gridy = 0;
-				infoPanel.add(lblVersion, gbc_lblVersion);
-		
+
+		JLabel lblPrfungstitel = new JLabel("Pr\u00FCfungstitel");
+		GridBagConstraints gbc_lblPrfungstitel = new GridBagConstraints();
+		gbc_lblPrfungstitel.anchor = GridBagConstraints.WEST;
+		gbc_lblPrfungstitel.insets = new Insets(0, 0, 0, 50);
+		gbc_lblPrfungstitel.gridx = 0;
+		gbc_lblPrfungstitel.gridy = 0;
+		infoPanel.add(lblPrfungstitel, gbc_lblPrfungstitel);
+
+		JLabel lblMatrikelnummer = new JLabel("Matrikelnummer: 1587953");
+		GridBagConstraints gbc_lblMatrikelnummer = new GridBagConstraints();
+		gbc_lblMatrikelnummer.anchor = GridBagConstraints.WEST;
+		gbc_lblMatrikelnummer.insets = new Insets(0, 0, 0, 50);
+		gbc_lblMatrikelnummer.gridx = 1;
+		gbc_lblMatrikelnummer.gridy = 0;
+		infoPanel.add(lblMatrikelnummer, gbc_lblMatrikelnummer);
+
+		JLabel lblVersion = new JLabel("Version 1.01");
+		GridBagConstraints gbc_lblVersion = new GridBagConstraints();
+		gbc_lblVersion.anchor = GridBagConstraints.WEST;
+		gbc_lblVersion.insets = new Insets(0, 0, 0, 50);
+		gbc_lblVersion.gridx = 2;
+		gbc_lblVersion.gridy = 0;
+		infoPanel.add(lblVersion, gbc_lblVersion);
+
 		JLabel lblRestzeit = new JLabel("Restzeit: 24:32");
 		GridBagConstraints gbc_lblRestzeit = new GridBagConstraints();
 		gbc_lblRestzeit.insets = new Insets(0, 0, 0, 5);
@@ -121,7 +121,7 @@ public class PruefungView {
 		frame.getContentPane().add(aufgabenstellungPanel, BorderLayout.CENTER);
 		GridBagLayout gbl_aufgabenstellungPanel = new GridBagLayout();
 		gbl_aufgabenstellungPanel.columnWidths = new int[] { 0, 768 };
-		gbl_aufgabenstellungPanel.rowHeights = new int[] {30, 150, 150, 30};
+		gbl_aufgabenstellungPanel.rowHeights = new int[] { 30, 150, 150, 30 };
 		gbl_aufgabenstellungPanel.columnWeights = new double[] { 0.0, 1.0 };
 		gbl_aufgabenstellungPanel.rowWeights = new double[] { 0.0, 1.0, 1.0 };
 		aufgabenstellungPanel.setLayout(gbl_aufgabenstellungPanel);
@@ -200,29 +200,22 @@ public class PruefungView {
 		antwortenTable.setBackground(SystemColor.inactiveCaption);
 		antwortenTable.setModel(
 				new DefaultTableModel(
-			new Object[][] {
-				{Boolean.FALSE, "Java ist eine objektorientierte Programmiersprache"},
-				{null, "Integer sind unbegrenzt"},
-				{null, "Interfaces haben nur Nachteile"},
-				{null, "Vererbung schafft \u00FCberfl\u00FCssigen Code"},
-				{null, "Methoden k\u00F6nnen einen R\u00FCckgabewert haben"},
-			},
-			new String[] {
-				"", ""
-			}
-		) {
-			Class[] columnTypes = new Class[] {
-				Boolean.class, Object.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
+						new Object[][] { { Boolean.FALSE, "Java ist eine objektorientierte Programmiersprache" },
+								{ null, "Integer sind unbegrenzt" }, { null, "Interfaces haben nur Nachteile" },
+								{ null, "Vererbung schafft \u00FCberfl\u00FCssigen Code" },
+								{ null, "Methoden k\u00F6nnen einen R\u00FCckgabewert haben" }, },
+						new String[] { "", "" }) {
+					Class[] columnTypes = new Class[] { Boolean.class, Object.class };
+
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+				});
 		antwortenTable.getColumnModel().getColumn(0).setPreferredWidth(50);
 		antwortenTable.getColumnModel().getColumn(0).setMaxWidth(50);
 		antwortenTable.setTableHeader(null);
 		antwortenScrollPane.setViewportView(antwortenTable);
-		
+
 		JLabel lblPunktzahl = new JLabel("Punktzahl: 5");
 		lblPunktzahl.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_lblPunktzahl = new GridBagConstraints();
@@ -252,8 +245,8 @@ public class PruefungView {
 		frame.pack();
 
 	}
-	
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		PruefungView pruefungView = new PruefungView();
 	}
 

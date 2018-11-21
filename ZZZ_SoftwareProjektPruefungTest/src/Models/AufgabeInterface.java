@@ -2,7 +2,7 @@ package Models;
 
 import java.util.ArrayList;
 
-public interface AufgabeModelInterface  {
+public interface AufgabeInterface {
 	public String getAufgabentitel();
 
 	public void setAufgabentitel(String aufgabentitel);

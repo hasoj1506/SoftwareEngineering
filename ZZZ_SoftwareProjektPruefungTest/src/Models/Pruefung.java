@@ -2,15 +2,15 @@ package Models;
 
 import java.util.ArrayList;
 
-public class PruefungsModel implements PruefungsModelInterface {
+public class Pruefung implements PruefungsInterface {
 
 	private int pruefungsnummer;
 	private String pruefungstitel;
 	private int pruefungsdauer;
 	private ArrayList<Observer> p_observers = new ArrayList<Observer>();
-	private ArrayList<AufgabeModelInterface> aufgaben;
+	private ArrayList<AufgabeInterface> aufgaben;
 
-	public PruefungsModel(int pNr, String titel, int dauer) {
+	public Pruefung(int pNr, String titel, int dauer) {
 		this.pruefungsnummer = pNr;
 		this.pruefungstitel = titel;
 		this.pruefungsdauer = dauer;
@@ -38,11 +38,11 @@ public class PruefungsModel implements PruefungsModelInterface {
 		notifyObservers();
 	}
 
-	public ArrayList<AufgabeModelInterface> getAufgaben() {
+	public ArrayList<AufgabeInterface> getAufgaben() {
 		return aufgaben;
 	}
 
-	public void setAufgaben(ArrayList<AufgabeModelInterface> aufgaben) {
+	public void setAufgaben(ArrayList<AufgabeInterface> aufgaben) {
 		this.aufgaben = aufgaben;
 	}
 

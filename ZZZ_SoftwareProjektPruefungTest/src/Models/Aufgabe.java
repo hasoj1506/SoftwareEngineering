@@ -2,16 +2,14 @@ package Models;
 
 import java.util.ArrayList;
 
-public class AufgabeModel implements AufgabeModelInterface {
-	
-	
+public class Aufgabe implements AufgabeInterface {
 
 	private String aufgabentitel;
 	private String frageStellung;
 	private ArrayList<Antwort> antworten;
 	private int punktzahl;
-	
-	public AufgabeModel(String aufgabentitel, String frageStellung, int punktzahl) {
+
+	public Aufgabe(String aufgabentitel, String frageStellung, int punktzahl) {
 		this.aufgabentitel = aufgabentitel;
 		this.frageStellung = frageStellung;
 		this.punktzahl = punktzahl;
@@ -49,6 +47,5 @@ public class AufgabeModel implements AufgabeModelInterface {
 	public void setAntworten(ArrayList<Antwort> antworten) {
 		this.antworten = antworten;
 	}
-		
 
 }

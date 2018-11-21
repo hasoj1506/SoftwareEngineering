@@ -4,13 +4,13 @@ public class Nutzer {
 
 	private String vorname;
 	private String nachname;
-	
+
 	private String benutzername;
 	private String passwort;
-	
+
 	private boolean istDozent;
-	private int idNummer;	// Dozentennummer oder Matrikelnummer
-	
+	private int idNummer; // Dozentennummer oder Matrikelnummer
+
 	public Nutzer(String vorname, String nachname, boolean istDozent, int idNummer) {
 		this.vorname = vorname;
 		this.nachname = nachname;
@@ -67,8 +67,5 @@ public class Nutzer {
 	public void setIdNummer(int idNummer) {
 		this.idNummer = idNummer;
 	}
-	
-	
-	
-	
+
 }

@@ -3,15 +3,15 @@ package Models;
 import java.util.Date;
 
 public class Termin {
-	
+
 	private Date datum;
-	private int uhrzeit;	//ggf. mit GregorianCalender anderer Parameter
+	private int uhrzeit; // ggf. mit GregorianCalender anderer Parameter
 	private String raum;
-	
-	private PruefungsModel pruefung;	//Zu jedem Termin genau eine Pruefung
-	
+
+	private Pruefung pruefung; // Zu jedem Termin genau eine Pruefung
+
 	public Termin() {
-		
+
 	}
 
 	public Date getDatum() {

@@ -14,11 +14,11 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-import Models.PruefungslisteModel;
+import Models.Pruefungsliste;
 
 public class PruefungsverwaltungView implements Models.Observer {
 
-	private PruefungslisteModel pl_model;
+	private Pruefungsliste pl_model;
 	private JFrame frame = new JFrame();
 	private JPanel panel = new JPanel();
 	private JList liste;
@@ -26,7 +26,7 @@ public class PruefungsverwaltungView implements Models.Observer {
 	private JTable table;
 	private DefaultTableModel tableModel;
 
-	public PruefungsverwaltungView(PruefungslisteModel model) {
+	public PruefungsverwaltungView(Pruefungsliste model) {
 		pl_model = model;
 		pl_model.register(this);
 		createComponents();
@@ -36,12 +36,12 @@ public class PruefungsverwaltungView implements Models.Observer {
 
 		frame.setTitle("Prüfungsverwaltung");
 		frame.setSize(400, 200);
-		
+
 		int[] pruefungsnummer = new int[pl_model.getPruefungsliste().size()];
-		for(int i=0; i<pl_model.getPruefungsliste().size(); i++){
+		for (int i = 0; i < pl_model.getPruefungsliste().size(); i++) {
 			pruefungsnummer[i] = (pl_model.getPruefungsliste().get(i).getPruefungsnummer());
 		}
-		
+
 		String[] pruefungstitel = new String[pl_model.getPruefungsliste().size()];
 		for (int i = 0; i < pl_model.getPruefungsliste().size(); i++) {
 			pruefungstitel[i] = (pl_model.getPruefungsliste().get(i).getPruefungstitel());
@@ -52,29 +52,31 @@ public class PruefungsverwaltungView implements Models.Observer {
 		scrollPane.setBackground(SystemColor.inactiveCaption);
 
 		panel.add(scrollPane, BorderLayout.CENTER);
-		
-		tableModel = new DefaultTableModel(new Object[]{"Nummer", "Prüfungstitel", "Dauer"}, pl_model.getPruefungsliste().size());
-		for(int i=0; i<pl_model.getPruefungsliste().size(); i++){
+
+		tableModel = new DefaultTableModel(new Object[] { "Nummer", "Prüfungstitel", "Dauer" },
+				pl_model.getPruefungsliste().size());
+		for (int i = 0; i < pl_model.getPruefungsliste().size(); i++) {
 			tableModel.setValueAt(pl_model.getPruefungsliste().get(i).getPruefungsnummer(), i, 0);
 		}
-		for(int i=0; i<pl_model.getPruefungsliste().size(); i++){
+		for (int i = 0; i < pl_model.getPruefungsliste().size(); i++) {
 			tableModel.setValueAt(pl_model.getPruefungsliste().get(i).getPruefungstitel(), i, 1);
 		}
-		for(int i=0; i<pl_model.getPruefungsliste().size(); i++){
+		for (int i = 0; i < pl_model.getPruefungsliste().size(); i++) {
 			tableModel.setValueAt(pl_model.getPruefungsliste().get(i).getPruefungsdauer(), i, 2);
 		}
-		
-//		tableModel.setColumnIdentifiers(new Object[]{"Nummer", "Prüfungstitel", "Dauer"});
-//		for( int r = 0; r < pl_model.getPruefungsliste().size(); r++ ){
-//            Object[] row = new Object[ tableModel.getColumnCount() ];
-//            
-//            for( int c = 0; c < row.length; c++ ){
-//                row[c] = pl_model.getPruefungsliste().get(r).getPruefungsnummer();
-//            }
-//            
-//            tableModel.addRow( row );
-//        }
-		
+
+		// tableModel.setColumnIdentifiers(new Object[]{"Nummer",
+		// "Prüfungstitel", "Dauer"});
+		// for( int r = 0; r < pl_model.getPruefungsliste().size(); r++ ){
+		// Object[] row = new Object[ tableModel.getColumnCount() ];
+		//
+		// for( int c = 0; c < row.length; c++ ){
+		// row[c] = pl_model.getPruefungsliste().get(r).getPruefungsnummer();
+		// }
+		//
+		// tableModel.addRow( row );
+		// }
+
 		table = new JTable(tableModel);
 		table.setFont(new Font("Tahoma", Font.BOLD, 11));
 		table.setBackground(SystemColor.inactiveCaption);
@@ -85,11 +87,12 @@ public class PruefungsverwaltungView implements Models.Observer {
 				JTable table = (JTable) evt.getSource();
 				if (evt.getClickCount() == 2) {
 					int selectedRow = table.getSelectedRow();
-					PruefungsDetailsView a_view = new PruefungsDetailsView(pl_model.getPruefungsliste().get(selectedRow));
+					PruefungsDetailsView a_view = new PruefungsDetailsView(
+							pl_model.getPruefungsliste().get(selectedRow));
 				}
 			}
 		});
-		
+
 		scrollPane.setViewportView(table);
 		frame.setVisible(true);
 		frame.pack();
