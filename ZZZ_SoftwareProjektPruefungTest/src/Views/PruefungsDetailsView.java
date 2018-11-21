@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
 
+import Controller.PruefungsdetailsController;
+import Models.Observer;
 import Models.PruefungsModelInterface;
 
 import java.awt.GridBagConstraints;
@@ -22,19 +24,33 @@ import javax.swing.JTable;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-public class PruefungsDetails extends JFrame {
+public class PruefungsDetailsView implements Observer {
+	private PruefungsdetailsController p_controller;
+	private PruefungsModelInterface p_model;
+	private JFrame frame;
 	private JTextField textFieldPrfungstitel;
 	private JTextField textFieldDauer;
 	private JTextField textFieldPunkte;
 	private JTable tableAufgaben;
 	private JTable table;
-	public PruefungsDetails(PruefungsModelInterface pruefung) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	public PruefungsDetailsView(PruefungsModelInterface pruefungsModelInterface) {
+		p_model = pruefungsModelInterface;
+		p_model.register(this);
+		p_controller = new PruefungsdetailsController(pruefungsModelInterface, this);
+		createComponents();
+		
+	}
+	
+	public void createComponents(){
+		
+		this.frame = new JFrame("Prüfungsdetails");
+		frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
 		
 		JPanel panelButtons = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) panelButtons.getLayout();
 		flowLayout.setAlignment(FlowLayout.RIGHT);
-		getContentPane().add(panelButtons, BorderLayout.SOUTH);
+		frame.getContentPane().add(panelButtons, BorderLayout.SOUTH);
 		
 		JButton btnSpeichern = new JButton("Speichern");
 		btnSpeichern.addActionListener(new ActionListener() {
@@ -50,7 +66,7 @@ public class PruefungsDetails extends JFrame {
 		panelButtons.add(btnFreigeben);
 		
 		JPanel panelMain = new JPanel();
-		getContentPane().add(panelMain, BorderLayout.CENTER);
+		frame.getContentPane().add(panelMain, BorderLayout.CENTER);
 		GridBagLayout gbl_panelMain = new GridBagLayout();
 		gbl_panelMain.columnWidths = new int[]{0, 0, 300, 50, 0, 0, 0};
 		gbl_panelMain.rowHeights = new int[]{0, 0, 59, 0, 0, 0, 0};
@@ -67,6 +83,7 @@ public class PruefungsDetails extends JFrame {
 		panelMain.add(lblPrfungstitel, gbc_lblPrfungstitel);
 		
 		textFieldPrfungstitel = new JTextField();
+		textFieldPrfungstitel.setText(p_model.getPruefungstitel());
 		GridBagConstraints gbc_textFieldPrfungstitel = new GridBagConstraints();
 		gbc_textFieldPrfungstitel.insets = new Insets(0, 0, 5, 5);
 		gbc_textFieldPrfungstitel.fill = GridBagConstraints.HORIZONTAL;
@@ -92,6 +109,7 @@ public class PruefungsDetails extends JFrame {
 		panel.add(lblDauermin);
 		
 		textFieldDauer = new JTextField();
+		textFieldDauer.setText(String.valueOf(p_model.getPruefungsdauer()));
 		panel.add(textFieldDauer);
 		textFieldDauer.setColumns(4);
 		
@@ -138,8 +156,14 @@ public class PruefungsDetails extends JFrame {
 		gbc_table.gridy = 4;
 		panelMain.add(table, gbc_table);
 		
-		setVisible(true);
-		pack();
+		frame.setVisible(true);
+		frame.pack();
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
