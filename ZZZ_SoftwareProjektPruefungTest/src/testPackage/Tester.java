@@ -1,17 +1,15 @@
-package Test;
+package testPackage;
 
 
-import model.BestellungenModel;
-import model.PruefungsModel;
-import model.PruefungslisteModel;
-import view.PruefungsverwaltungView;
+import Models.PruefungsModel;
+import Models.PruefungslisteModel;
+import Views.PruefungsverwaltungView;
 
 
 public class Tester {
 	
 	public static void main(String[] args){
 	
-		
 		//Erstellen von 4 Beispielartikeln
 		PruefungsModel p1 = new PruefungsModel(1234, "WS 18/19", 90);
 		PruefungsModel p2 = new PruefungsModel(1256, "WS 19/20", 120);
@@ -23,7 +21,7 @@ public class Tester {
 		pruefungsliste.hinzufuegenPruefungZuPruefungsliste(p2);
 		pruefungsliste.hinzufuegenPruefungZuPruefungsliste(p3);
 		pruefungsliste.hinzufuegenPruefungZuPruefungsliste(p4);
-		PruefungsverwaltungView alview = new PruefungsverwaltungView(pruefungsliste);
+		PruefungsverwaltungView pvview = new PruefungsverwaltungView(pruefungsliste);
 		
 	}
 	

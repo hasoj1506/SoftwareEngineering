@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
+
+import Models.PruefungsModelInterface;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
@@ -25,7 +28,7 @@ public class PruefungsDetails extends JFrame {
 	private JTextField textFieldPunkte;
 	private JTable tableAufgaben;
 	private JTable table;
-	public PruefungsDetails() {
+	public PruefungsDetails(PruefungsModelInterface pruefung) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panelButtons = new JPanel();
@@ -134,6 +137,9 @@ public class PruefungsDetails extends JFrame {
 		gbc_table.gridx = 2;
 		gbc_table.gridy = 4;
 		panelMain.add(table, gbc_table);
+		
+		setVisible(true);
+		pack();
 	}
 
 }

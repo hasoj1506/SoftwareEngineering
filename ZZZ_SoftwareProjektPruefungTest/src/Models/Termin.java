@@ -8,7 +8,7 @@ public class Termin {
 	private int uhrzeit;	//ggf. mit GregorianCalender anderer Parameter
 	private String raum;
 	
-	private Pruefung pruefung;	//Zu jedem Termin genau eine Pruefung
+	private PruefungsModel pruefung;	//Zu jedem Termin genau eine Pruefung
 	
 	public Termin() {
 		

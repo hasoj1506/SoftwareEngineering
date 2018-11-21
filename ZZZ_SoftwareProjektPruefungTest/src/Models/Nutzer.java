@@ -11,10 +11,13 @@ public class Nutzer {
 	private boolean istDozent;
 	private int idNummer;	// Dozentennummer oder Matrikelnummer
 	
-	public Nutzer() {
-		
-		
-		
+	public Nutzer(String vorname, String nachname, boolean istDozent, int idNummer) {
+		this.vorname = vorname;
+		this.nachname = nachname;
+		this.istDozent = istDozent;
+		this.benutzername = null;
+		this.passwort = null;
+		this.idNummer = idNummer;
 	}
 
 	public String getVorname() {

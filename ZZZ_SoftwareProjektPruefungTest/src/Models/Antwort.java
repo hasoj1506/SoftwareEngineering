@@ -5,8 +5,9 @@ public class Antwort {
 	private boolean istRichtig;
 	private String antworttext;
 	
-	public Antwort() {
-		
+	public Antwort(String antworttext, boolean istRichtig) {
+		this.antworttext = antworttext;
+		this.istRichtig = istRichtig;
 	}
 
 	public boolean isIstRichtig() {
