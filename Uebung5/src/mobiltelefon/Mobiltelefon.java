@@ -63,6 +63,42 @@ package mobiltelefon;
 		{
 			return eingeschaltet!=true;
 		}
+
+		public String getBesitzer() {
+			return besitzer;
+		}
+
+		public void setBesitzer(String besitzer) {
+			this.besitzer = besitzer;
+		}
+
+		public String getMarke() {
+			return marke;
+		}
+
+		public void setMarke(String marke) {
+			this.marke = marke;
+		}
+
+		public String getFarbe() {
+			return farbe;
+		}
+
+		public void setFarbe(String farbe) {
+			this.farbe = farbe;
+		}
+
+		public int getLadezustand() {
+			return ladezustand;
+		}
+
+		public void setLadezustand(int ladezustand) {
+			this.ladezustand = ladezustand;
+		}
+
+		public void setEingeschaltet(Boolean eingeschaltet) {
+			this.eingeschaltet = eingeschaltet;
+		}
 	
 }
 
