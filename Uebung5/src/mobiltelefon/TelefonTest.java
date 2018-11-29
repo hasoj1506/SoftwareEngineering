@@ -32,23 +32,16 @@ public class TelefonTest {
 
 	@Test
 	public void testTelefonieren() {
+		int ladezustandVorher = telefon.getLadezustand();
 		telefon.telefonieren("12345");
-		assertEquals("Mobiltelefon weniger geladen", telefon.getLadezustand()-30, telefon.getLadezustand());
+		assertEquals("Mobiltelefon weniger geladen", ladezustandVorher - 30, telefon.getLadezustand());
 	}
 
 	@Test
 	public void testSpielen() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetEingeschaltet() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetAusgeschaltet() {
-		fail("Not yet implemented");
+		int ladezustandVorher = telefon.getLadezustand();
+		telefon.spielen();
+		assertEquals("Mobiltelefon weniger geladen", ladezustandVorher - 20, telefon.getLadezustand());
 	}
 
 }
