@@ -8,15 +8,19 @@ import org.junit.Test;
 
 public class RabattTest {
 
+	private Bestellungen best;
+	private Kunde mueller;
+	private Artikel nikeFree;
+
 	@Before
 	public void setUp() throws Exception {
-		Bestellungen best = new Bestellungen();
-		Kunde Mueller = new Kunde("2;Müller;Tom;17");
-		Artikel NikeFree = new Artikel(1, "Nike Free", 89.99);
+		best = new Bestellungen();
+		mueller = new Kunde("2;Müller;Tom;15");
+		nikeFree = new Artikel(1, "Nike Free", 100.0);
 		
-		Mueller.setAnzVergangenerBestellungen(15);
-		Mueller.hinzufuegenArtikelInWarenkorb(NikeFree);
-		Mueller.bestellen(best, true);
+		mueller.setAnzVergangenerBestellungen(4);
+		mueller.hinzufuegenArtikelInWarenkorb(nikeFree);
+		mueller.bestellen(best, true);
 	}
 
 	@After
@@ -25,7 +29,41 @@ public class RabattTest {
 
 	@Test
 	public void testGetGesamtbetrag() {
+		best = new Bestellungen();
+		mueller = new Kunde("2;Müller;Tom;15");
+		nikeFree = new Artikel(1, "Nike Free", 100.0);
 		
+		mueller.setAnzVergangenerBestellungen(4);
+		mueller.hinzufuegenArtikelInWarenkorb(nikeFree);
+		mueller.bestellen(best, true);
+		double betrag = best.getBestellung(1).getGesamtbetrag();
+		assertEquals("Gesamtbetrag getestet", 85.5, betrag, 0.05);
+	}
+	
+	@Test
+	public void testGetGesamtbetrag2() {
+		best = new Bestellungen();
+		mueller = new Kunde("2;Müller;Tom;15");
+		nikeFree = new Artikel(1, "Nike Free", 5.0);
+		
+		mueller.setAnzVergangenerBestellungen(4);
+		mueller.hinzufuegenArtikelInWarenkorb(nikeFree);
+		mueller.bestellen(best, false);
+		double betrag = best.getBestellung(1).getGesamtbetrag();
+		assertEquals("Gesamtbetrag getestet", 4.75, betrag, 0.05);
+	}
+	
+	@Test
+	public void testGetGesamtbetrag3() {
+		best = new Bestellungen();
+		mueller = new Kunde("2;Müller;Tom;30");
+		nikeFree = new Artikel(1, "Nike Free", 5.0);
+		
+		mueller.setAnzVergangenerBestellungen(15);
+		mueller.hinzufuegenArtikelInWarenkorb(nikeFree);
+		mueller.bestellen(best, false);
+		double betrag = best.getBestellung(1).getGesamtbetrag();
+		assertEquals("Gesamtbetrag getestet", 4.625, betrag, 0.05);
 	}
 
 }
