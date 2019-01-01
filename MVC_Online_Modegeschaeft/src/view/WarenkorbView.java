@@ -50,32 +50,9 @@ public class WarenkorbView implements Observer{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 		
-        String spalten[] = {"Pos.", "Bezeichnung", "Preis"};
-		String [][] daten = new String[wk_model.getArtikelliste().size()][3];
+        tabelleErzeugen();
 		
-		for(int i = 0; i < wk_model.getArtikelliste().size(); i++){
-			int zaehler = i;
-			zaehler++;
-			daten[i][0] = String.valueOf(zaehler);
-			daten[i][1] = wk_model.getArtikelliste().get(i).getBezeichnung();
-			daten[i][2] = String.valueOf(wk_model.getArtikelliste().get(i).getPreis());
-		}
-		
-		table = new JTable(daten, spalten);	
-	    table.getColumn("Pos.").setPreferredWidth(20);
-	    table.getColumn("Bezeichnung").setPreferredWidth(120);
-	    table.getColumn("Preis").setPreferredWidth(50);
-		paneltable.add(table);
-		
-		double preis = 0;
-		for(int i = 0; i < wk_model.getArtikelliste().size(); i++){
-			preis = preis + wk_model.getArtikelliste().get(i).getPreis();
-		}
-		NumberFormat n = NumberFormat.getInstance();
-		n.setMaximumFractionDigits(2);
-		gesamtpreis = new JLabel("Gesamtpreis: " + n.format(preis));
-		panelunten.setLayout(new GridLayout(2,1));
-		panelunten.add(gesamtpreis);
+		preisGenerieren();
 		
 		bestellenButton = new JButton("bestellen");
 		bestellenButton.setPreferredSize(new Dimension(100, 50));
@@ -91,6 +68,37 @@ public class WarenkorbView implements Observer{
 		frame.pack();
 		frame.setVisible(true);
 		
+	}
+
+	private void preisGenerieren() {
+		double preis = 0;
+		for(int i = 0; i < wk_model.getArtikelliste().size(); i++){
+			preis = preis + wk_model.getArtikelliste().get(i).getPreis();
+		}
+		NumberFormat n = NumberFormat.getInstance();
+		n.setMaximumFractionDigits(2);
+		gesamtpreis = new JLabel("Gesamtpreis: " + n.format(preis));
+		panelunten.setLayout(new GridLayout(2,1));
+		panelunten.add(gesamtpreis);
+	}
+
+	private void tabelleErzeugen() {
+		String spalten[] = {"Pos.", "Bezeichnung", "Preis"};
+		String [][] daten = new String[wk_model.getArtikelliste().size()][3];
+		
+		for(int i = 0; i < wk_model.getArtikelliste().size(); i++){
+			int zaehler = i;
+			zaehler++;
+			daten[i][0] = String.valueOf(zaehler);
+			daten[i][1] = wk_model.getArtikelliste().get(i).getBezeichnung();
+			daten[i][2] = String.valueOf(wk_model.getArtikelliste().get(i).getPreis());
+		}
+		
+		table = new JTable(daten, spalten);	
+	    table.getColumn("Pos.").setPreferredWidth(20);
+	    table.getColumn("Bezeichnung").setPreferredWidth(120);
+	    table.getColumn("Preis").setPreferredWidth(50);
+		paneltable.add(table);
 	}
 	
 	public void update() {
