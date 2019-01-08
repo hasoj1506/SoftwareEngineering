@@ -7,8 +7,6 @@ public class TestProxy {
 		System.out.println();
 		System.out.println("Name: " + pDatei.getName());
 		System.out.println("Inhalt: " + pDatei.getInhalt());
-		System.out.println();
-		System.out.println("Inhalt: " + pDatei.getInhalt());
 	}
 
 }
