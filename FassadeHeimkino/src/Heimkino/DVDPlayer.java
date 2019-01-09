@@ -8,33 +8,13 @@ public class DVDPlayer {
 
 	}
 
-	public void anhalten() {
-
-	}
-
-	public void aus() {
-
-	}
-
-	public void auswerfen() {
-
-	}
-
 	public void ein() {
 		System.out.println("DVD Player geht an.");
 
 	}
 
-	public void pause() {
-
-	}
-
 	public void setSetSurroundSound() {
 		System.out.println("DVD Player wird auf Surround Sound gesetzt.");
-
-	}
-
-	public void setZweiKanalTon() {
 
 	}
 

@@ -8,14 +8,6 @@ public class Leinwand {
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
-	public void hoch() {
-
-	}
-
 	public void runter() {
 		System.out.println("Leinwand geht runter.");
 
