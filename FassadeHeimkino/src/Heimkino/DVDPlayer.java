@@ -1,15 +1,10 @@
 package Heimkino;
 
-/**
- * @author ispeckens
- * @version 1.0
- * @created 05-Nov-2018 15:20:58
- */
-public class DVDSpieler {
+public class DVDPlayer {
 
-	public Beamer m_Beamer;
+	public Beamer beamer;
 
-	public DVDSpieler() {
+	public DVDPlayer() {
 
 	}
 
@@ -26,7 +21,7 @@ public class DVDSpieler {
 	}
 
 	public void ein() {
-		System.out.println("DVD Spieler geht an.");
+		System.out.println("DVD Player geht an.");
 
 	}
 
@@ -35,7 +30,7 @@ public class DVDSpieler {
 	}
 
 	public void setSetSurroundSound() {
-		System.out.println("DVD Spieler wird auf Surround Sound gesetzt.");
+		System.out.println("DVD Player wird auf Surround Sound gesetzt.");
 
 	}
 
@@ -47,4 +42,4 @@ public class DVDSpieler {
 		System.out.println("Film beginnt.");
 
 	}
-}// end DVDSpieler
+}

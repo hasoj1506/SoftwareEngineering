@@ -1,10 +1,5 @@
 package Heimkino;
 
-/**
- * @author ispeckens
- * @version 1.0
- * @created 05-Nov-2018 15:20:57
- */
 public class Beamer {
 
 	public Beamer(){
@@ -23,11 +18,11 @@ public class Beamer {
 	}
 
 	public void ein(){
-		System.out.println("Beamer geht an.");
+		System.out.println("Beamer startet.");
 
 	}
 
 	public void tvModus(){
 
 	}
-}//end Beamer
+}

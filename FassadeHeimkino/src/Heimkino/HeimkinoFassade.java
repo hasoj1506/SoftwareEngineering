@@ -1,27 +1,22 @@
 package Heimkino;
 
-/**
- * @author ispeckens
- * @version 1.0
- * @created 05-Nov-2018 15:20:58
- */
-public class FassadeHeimkino {
+public class HeimkinoFassade {
 
 	Beleuchtung beleuchtung;
 	Leinwand leinwand;
 	Verstaerker verstaerker;
 	Beamer beamer;
-	DVDSpieler dvdSpieler;
-	CDSpieler cdspieler;
+	DVDPlayer dvdPlayer;
+	CDPlayer cdPlayer;
 
-	public FassadeHeimkino() {
+	public HeimkinoFassade() {
 
 		beleuchtung = new Beleuchtung();
 		leinwand = new Leinwand();
 		verstaerker = new Verstaerker();
 		beamer = new Beamer();
-		dvdSpieler = new DVDSpieler();
-		cdspieler = new CDSpieler();
+		dvdPlayer = new DVDPlayer();
+		cdPlayer = new CDPlayer();
 
 	}
 
@@ -30,15 +25,15 @@ public class FassadeHeimkino {
 		leinwand.runter();
 		verstaerker.ein();
 		beamer.ein();
-		dvdSpieler.ein();
+		dvdPlayer.ein();
 		verstaerker.setDvd();
 		verstaerker.setSurroundSound();
-		dvdSpieler.setSetSurroundSound();
-		dvdSpieler.spielen();
+		dvdPlayer.setSetSurroundSound();
+		dvdPlayer.spielen();
 	}
 
 	public void CDStarten() {
-		cdspieler.ein();
+		cdPlayer.ein();
 
 	}
 }// end FassadeHeimkino
