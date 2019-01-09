@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class ShipOwner {
 
 	private String name;
-	// private ShipMarket market;
 	private ArrayList<Ship> ships;
 
 	public ShipOwner(String name) {
